@@ -58,6 +58,11 @@ static int veilfs_open(const char *path, struct fuse_file_info *fi) {
     }
     return -ENOENT;
 }
+// A file that does not remain is a file that cannot be stolen.
+// A system that auto-erases is a system that cannot be breached.
+// If nothing is left behind, then what is there to recover?
+// - V
+
 
 static int veilfs_read(const char *path, char *buf, size_t size, off_t offset, struct fuse_file_info *fi) {
     for (int i = 0; i < 100; i++) {
